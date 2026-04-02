@@ -1,0 +1,962 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Bonsai Boutique - Cultivate Patience</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Configuration -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#11d442",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102215",
+              "accent-gold": "#d4af37", // Adding a custom gold for the requested aesthetic touches
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              "2xl": "2rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Custom scrollbar for modern feel */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-[#111813] dark:text-white font-display overflow-x-hidden"
+  >
+    <div class="relative flex min-h-screen w-full flex-col group/design-root">
+      <!-- Header -->
+      <header
+        class="sticky top-0 z-50 w-full backdrop-blur-md bg-white/80 dark:bg-[#102215]/80 border-b border-[#f0f4f1] dark:border-[#1e3a24] transition-colors duration-300"
+      >
+        <div
+          class="px-4 md:px-10 py-3 flex items-center justify-between max-w-[1440px] mx-auto"
+        >
+          <!-- Logo -->
+          <div class="flex items-center gap-3">
+            <div class="size-8 text-primary">
+              <span class="material-symbols-outlined text-3xl">spa</span>
+            </div>
+            <h2
+              class="text-[#111813] dark:text-white text-xl font-bold tracking-tight"
+            >
+              Bonsai Boutique
+            </h2>
+          </div>
+          <!-- Navigation (Hidden on mobile) -->
+          <nav class="hidden md:flex items-center gap-8">
+            <a
+              class="text-[#111813] dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors"
+              href="#"
+              >Shop</a
+            >
+            <a
+              class="text-[#111813] dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors"
+              href="#"
+              >Collections</a
+            >
+            <a
+              class="text-[#111813] dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors"
+              href="#"
+              >Learn</a
+            >
+            <a
+              class="text-[#111813] dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors"
+              href="#"
+              >About</a
+            >
+          </nav>
+          <!-- Actions -->
+          <div class="flex items-center gap-4">
+            <!-- Search Bar (Desktop) -->
+            <div
+              class="hidden lg:flex items-center bg-[#f0f4f1] dark:bg-[#1e3a24] rounded-full px-4 h-10 w-64 border border-transparent focus-within:border-primary transition-colors"
+            >
+              <span
+                class="material-symbols-outlined text-[#61896b] dark:text-[#8ba893] text-[20px]"
+                >search</span
+              >
+              <input
+                class="bg-transparent border-none focus:ring-0 text-sm text-[#111813] dark:text-white w-full placeholder-[#61896b] dark:placeholder-[#8ba893]"
+                placeholder="Search species..."
+                type="text"
+              />
+            </div>
+            <!-- Icon Buttons -->
+            <button
+              class="p-2 text-[#111813] dark:text-white hover:bg-[#f0f4f1] dark:hover:bg-[#1e3a24] rounded-full transition-colors lg:hidden"
+            >
+              <span class="material-symbols-outlined text-[24px]">search</span>
+            </button>
+            <button
+              class="p-2 text-[#111813] dark:text-white hover:bg-[#f0f4f1] dark:hover:bg-[#1e3a24] rounded-full transition-colors relative group"
+            >
+              <span class="material-symbols-outlined text-[24px]"
+                >shopping_bag</span
+              >
+              <span
+                class="absolute top-1 right-1 size-2 bg-primary rounded-full"
+              ></span>
+            </button>
+            <button
+              class="p-2 text-[#111813] dark:text-white hover:bg-[#f0f4f1] dark:hover:bg-[#1e3a24] rounded-full transition-colors hidden sm:block"
+            >
+              <span class="material-symbols-outlined text-[24px]"
+                >account_circle</span
+              >
+            </button>
+          </div>
+        </div>
+      </header>
+      <main class="flex-1 w-full max-w-[1440px] mx-auto flex flex-col">
+        <!-- Hero Section: Split Screen -->
+        <section class="w-full px-4 md:px-10 py-6 md:py-12">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 min-h-[600px] rounded-3xl overflow-hidden bg-[#e8efe9] dark:bg-[#152e1c]"
+          >
+            <!-- Text Content -->
+            <div
+              class="flex flex-col justify-center px-6 py-12 md:px-16 lg:py-0 order-2 lg:order-1"
+            >
+              <div class="inline-flex items-center gap-2 mb-6">
+                <span class="h-px w-8 bg-accent-gold"></span>
+                <span
+                  class="text-accent-gold text-sm font-bold tracking-widest uppercase"
+                  >Premium Collection</span
+                >
+              </div>
+              <h1
+                class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#111813] dark:text-white leading-[1.1] tracking-tight mb-6"
+              >
+                Cultivate Patience.
+                <span class="text-primary italic">Grow Art.</span>
+              </h1>
+              <p
+                class="text-[#4a5f50] dark:text-[#a3b8a9] text-lg md:text-xl leading-relaxed mb-10 max-w-md"
+              >
+                Discover hand-selected bonsai for every stage of your journey.
+                From resilient beginner trees to master specimen artworks.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <button
+                  class="bg-primary hover:bg-[#0fb337] text-[#102215] px-8 py-4 rounded-xl font-bold text-base transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-primary/20 flex items-center gap-2"
+                >
+                  Start Your Journey
+                  <span class="material-symbols-outlined text-sm"
+                    >arrow_forward</span
+                  >
+                </button>
+                <button
+                  class="bg-white dark:bg-[#1e3a24] hover:bg-[#f6f8f6] dark:hover:bg-[#25462c] text-[#111813] dark:text-white border border-[#dbe6de] dark:border-[#2f4f36] px-8 py-4 rounded-xl font-bold text-base transition-all"
+                >
+                  View Gallery
+                </button>
+              </div>
+            </div>
+            <!-- Image Content -->
+            <div
+              class="relative h-[400px] lg:h-full w-full order-1 lg:order-2 group overflow-hidden"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#102215]/40 to-transparent z-10"
+              ></div>
+              <img
+                alt="Atmospheric bonsai nursery with sunlight filtering through leaves"
+                class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                data-alt="Close up of a bonsai tree with sunlight filtering through leaves in a nursery setting"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoIYIitPxhYsbmLbtbJxxK_8VS8r0ZvzjF57HKngqnM6vdFwnvEEOYdcWqMDARD0MU49h-YPM3u9Nihgsh19bSh_QZCK_szm8-qXzjgh3hIqRKCOulEalUxtyCiH94OFiknXl7wxdjn7wfHRF7Eh4G9UPQM4dPPJozrBEjd33nV8ZfEiea96fzbO2JR_eYfrDkYLL3E3aPOcKA9-HJpAP-WW4pOp9AAcGZdUlrLHkvTLwMGtMRsii01UYBk9aFl7nDNB7QIPtinFY"
+              />
+              <div
+                class="absolute bottom-8 right-8 z-20 bg-white/90 dark:bg-[#102215]/90 backdrop-blur-sm p-4 rounded-2xl shadow-xl max-w-xs hidden md:block border border-[#dbe6de] dark:border-[#2f4f36]"
+              >
+                <div class="flex items-start gap-3">
+                  <div class="bg-primary/20 p-2 rounded-lg text-primary">
+                    <span class="material-symbols-outlined">verified</span>
+                  </div>
+                  <div>
+                    <p
+                      class="text-xs font-bold text-accent-gold uppercase tracking-wider mb-1"
+                    >
+                      Featured Specimen
+                    </p>
+                    <h3
+                      class="text-[#111813] dark:text-white font-bold text-sm"
+                    >
+                      Japanese White Pine
+                    </h3>
+                    <p class="text-[#61896b] text-xs">Age: 45 Years</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Shop by Skill Level -->
+        <section class="py-16 md:py-24 px-4 md:px-10">
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6"
+          >
+            <div class="max-w-xl">
+              <h2
+                class="text-3xl md:text-4xl font-bold text-[#111813] dark:text-white mb-4"
+              >
+                Find Your Perfect Tree
+              </h2>
+              <p class="text-[#4a5f50] dark:text-[#a3b8a9] text-lg">
+                Whether you are just starting or have years of experience, we
+                have the right specimen for your skill level.
+              </p>
+            </div>
+            <a
+              class="text-primary hover:text-[#0fb337] font-bold flex items-center gap-1 group"
+              href="#"
+            >
+              View all collections
+              <span
+                class="material-symbols-outlined group-hover:translate-x-1 transition-transform text-sm"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Beginner Card -->
+            <div
+              class="group relative bg-white dark:bg-[#152e1c] rounded-2xl p-8 border border-[#f0f4f1] dark:border-[#1e3a24] hover:border-primary/50 dark:hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/5 overflow-hidden"
+            >
+              <div
+                class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110"
+              ></div>
+              <div class="relative z-10">
+                <div
+                  class="w-14 h-14 rounded-xl bg-[#e8efe9] dark:bg-[#1e3a24] flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300"
+                >
+                  <span class="material-symbols-outlined text-3xl"
+                    >potted_plant</span
+                  >
+                </div>
+                <h3
+                  class="text-2xl font-bold text-[#111813] dark:text-white mb-2"
+                >
+                  Beginner
+                </h3>
+                <p
+                  class="text-[#61896b] dark:text-[#8ba893] mb-8 leading-relaxed"
+                >
+                  Resilient species like Ficus and Juniper that are forgiving
+                  and perfect for learning the basics of care and styling.
+                </p>
+                <ul class="space-y-3 mb-8">
+                  <li
+                    class="flex items-center gap-2 text-sm text-[#4a5f50] dark:text-[#a3b8a9]"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary text-base"
+                      >check_circle</span
+                    >
+                    Forgiving watering needs
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-sm text-[#4a5f50] dark:text-[#a3b8a9]"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary text-base"
+                      >check_circle</span
+                    >
+                    Fast growing
+                  </li>
+                </ul>
+                <button
+                  class="w-full py-3 rounded-lg border border-[#dbe6de] dark:border-[#2f4f36] text-[#111813] dark:text-white font-bold hover:bg-primary hover:border-primary hover:text-[#102215] transition-colors flex items-center justify-center gap-2"
+                >
+                  Shop Beginner
+                </button>
+              </div>
+            </div>
+            <!-- Intermediate Card -->
+            <div
+              class="group relative bg-white dark:bg-[#152e1c] rounded-2xl p-8 border border-[#f0f4f1] dark:border-[#1e3a24] hover:border-primary/50 dark:hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/5 overflow-hidden"
+            >
+              <div
+                class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110"
+              ></div>
+              <div class="relative z-10">
+                <div
+                  class="w-14 h-14 rounded-xl bg-[#e8efe9] dark:bg-[#1e3a24] flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300"
+                >
+                  <span class="material-symbols-outlined text-3xl">forest</span>
+                </div>
+                <h3
+                  class="text-2xl font-bold text-[#111813] dark:text-white mb-2"
+                >
+                  Intermediate
+                </h3>
+                <p
+                  class="text-[#61896b] dark:text-[#8ba893] mb-8 leading-relaxed"
+                >
+                  Refined trees requiring specific techniques, seasonal
+                  attention, and a deeper understanding of pruning.
+                </p>
+                <ul class="space-y-3 mb-8">
+                  <li
+                    class="flex items-center gap-2 text-sm text-[#4a5f50] dark:text-[#a3b8a9]"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary text-base"
+                      >check_circle</span
+                    >
+                    Seasonal pruning
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-sm text-[#4a5f50] dark:text-[#a3b8a9]"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary text-base"
+                      >check_circle</span
+                    >
+                    Specific soil requirements
+                  </li>
+                </ul>
+                <button
+                  class="w-full py-3 rounded-lg border border-[#dbe6de] dark:border-[#2f4f36] text-[#111813] dark:text-white font-bold hover:bg-primary hover:border-primary hover:text-[#102215] transition-colors flex items-center justify-center gap-2"
+                >
+                  Shop Intermediate
+                </button>
+              </div>
+            </div>
+            <!-- Master Card -->
+            <div
+              class="group relative bg-[#102215] dark:bg-[#0c1a10] rounded-2xl p-8 border border-[#1e3a24] shadow-2xl overflow-hidden"
+            >
+              <!-- Accent Gold Gradient for Master -->
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-accent-gold/10 to-transparent pointer-events-none"
+              ></div>
+              <div
+                class="absolute top-0 right-0 w-32 h-32 bg-accent-gold/20 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110"
+              ></div>
+              <div class="relative z-10">
+                <div
+                  class="w-14 h-14 rounded-xl bg-[#1e3a24] flex items-center justify-center text-accent-gold mb-6 group-hover:bg-accent-gold group-hover:text-[#102215] transition-colors duration-300 border border-accent-gold/30"
+                >
+                  <span class="material-symbols-outlined text-3xl"
+                    >emoji_events</span
+                  >
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">
+                  Master Series
+                </h3>
+                <p class="text-gray-300 mb-8 leading-relaxed">
+                  Museum-quality specimens for the dedicated artist. Aged,
+                  wired, and styled to perfection.
+                </p>
+                <ul class="space-y-3 mb-8">
+                  <li class="flex items-center gap-2 text-sm text-gray-300">
+                    <span
+                      class="material-symbols-outlined text-accent-gold text-base"
+                      >stars</span
+                    >
+                    Exhibition quality
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-gray-300">
+                    <span
+                      class="material-symbols-outlined text-accent-gold text-base"
+                      >stars</span
+                    >
+                    30+ years old
+                  </li>
+                </ul>
+                <button
+                  class="w-full py-3 rounded-lg bg-accent-gold text-[#102215] font-bold hover:bg-white transition-colors flex items-center justify-center gap-2"
+                >
+                  Shop Masterpieces
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Featured Specimens Horizontal Scroll -->
+        <section
+          class="py-12 px-4 md:px-10 bg-[#f0f4f1] dark:bg-[#152e1c] rounded-3xl mx-4 md:mx-10 mb-20"
+        >
+          <div class="flex items-center justify-between mb-8 px-2">
+            <h2
+              class="text-2xl md:text-3xl font-bold text-[#111813] dark:text-white"
+            >
+              New Arrivals
+            </h2>
+            <div class="flex gap-2">
+              <button
+                class="w-10 h-10 rounded-full bg-white dark:bg-[#1e3a24] flex items-center justify-center text-[#111813] dark:text-white hover:bg-primary hover:text-[#102215] transition-colors shadow-sm"
+              >
+                <span class="material-symbols-outlined">chevron_left</span>
+              </button>
+              <button
+                class="w-10 h-10 rounded-full bg-white dark:bg-[#1e3a24] flex items-center justify-center text-[#111813] dark:text-white hover:bg-primary hover:text-[#102215] transition-colors shadow-sm"
+              >
+                <span class="material-symbols-outlined">chevron_right</span>
+              </button>
+            </div>
+          </div>
+          <div class="flex gap-6 overflow-x-auto pb-8 snap-x">
+            <!-- Product 1 -->
+            <div
+              class="min-w-[280px] md:min-w-[320px] snap-center bg-white dark:bg-[#102215] rounded-xl overflow-hidden group border border-[#dbe6de] dark:border-[#1e3a24] hover:shadow-lg transition-all"
+            >
+              <div
+                class="h-[280px] bg-[#f6f8f6] dark:bg-[#0c1a10] relative overflow-hidden"
+              >
+                <img
+                  alt="Miniature Juniper Bonsai in ceramic pot"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  data-alt="Small green bonsai tree in a dark ceramic pot"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMXE9pK87L5as3z0WsMRN9i9aKlmsZhNMfGJyiU4vq8OGWGPGMXDezJcCU4kjsR5_JEFCziqut77ubmoY21-Q5jXrfKNeTB2hpPMkZJdXMuoVkyXM0fd6FC5hpxWKnTe9SU9YuDedO-O2iNTtl8s9zytvtDuSvKBn2BNqcRW6nmCQ-bwJSk1rzugC9N9aGwFZyuBgAgzEWSHDMXkn2lcPDKGAKxtT78Jm93792QaMRPSoDJK7ux-aFvLn_LSEQtWN06nkzWIkn_ZI"
+                />
+                <span
+                  class="absolute top-4 left-4 bg-white/90 dark:bg-[#102215]/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#111813] dark:text-white"
+                  >Beginner</span
+                >
+              </div>
+              <div class="p-5">
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="text-lg font-bold text-[#111813] dark:text-white">
+                    Juniper Procumbens
+                  </h3>
+                  <span class="text-primary font-bold">$45.00</span>
+                </div>
+                <p class="text-sm text-[#61896b] dark:text-[#8ba893] mb-4">
+                  Indoor • 5 Years Old
+                </p>
+                <button
+                  class="w-full py-2.5 rounded-lg border-2 border-[#111813] dark:border-white text-[#111813] dark:text-white font-bold hover:bg-[#111813] hover:text-white dark:hover:bg-white dark:hover:text-[#102215] transition-colors text-sm"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+            <!-- Product 2 -->
+            <div
+              class="min-w-[280px] md:min-w-[320px] snap-center bg-white dark:bg-[#102215] rounded-xl overflow-hidden group border border-[#dbe6de] dark:border-[#1e3a24] hover:shadow-lg transition-all"
+            >
+              <div
+                class="h-[280px] bg-[#f6f8f6] dark:bg-[#0c1a10] relative overflow-hidden"
+              >
+                <img
+                  alt="Flowering Azalea Bonsai"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  data-alt="Flowering bonsai tree with pink blooms"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYQPaid-hSmSrh0f1HFDioH0848Dx-YVgVa7Vp3mZbBAP9x-QXKGPgwQpOUvxRd1UkrUZy8vVYsRVnkx9E9pFBb1vC-Vf1XH6NXU7yxojtFzKj5VBrmoSoSDvlNMNgmBKPjdpEnEpshjop2InHs9RWahR-Az17y0ixLcPXw6a5rnaR7EJu-BuMaVR0xsYSWXYyWJvqKdU15DZ6loBRrzLrKFa9AQ1rtTFqzVKso1RpqMFLR0BFakv8g8pAr11YRANwSKYtgEUa9LA"
+                />
+                <span
+                  class="absolute top-4 left-4 bg-[#102215]/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-white"
+                  >Intermediate</span
+                >
+              </div>
+              <div class="p-5">
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="text-lg font-bold text-[#111813] dark:text-white">
+                    Satsuki Azalea
+                  </h3>
+                  <span class="text-primary font-bold">$120.00</span>
+                </div>
+                <p class="text-sm text-[#61896b] dark:text-[#8ba893] mb-4">
+                  Flowering • 12 Years Old
+                </p>
+                <button
+                  class="w-full py-2.5 rounded-lg border-2 border-[#111813] dark:border-white text-[#111813] dark:text-white font-bold hover:bg-[#111813] hover:text-white dark:hover:bg-white dark:hover:text-[#102215] transition-colors text-sm"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+            <!-- Product 3 -->
+            <div
+              class="min-w-[280px] md:min-w-[320px] snap-center bg-white dark:bg-[#102215] rounded-xl overflow-hidden group border border-[#dbe6de] dark:border-[#1e3a24] hover:shadow-lg transition-all"
+            >
+              <div
+                class="h-[280px] bg-[#f6f8f6] dark:bg-[#0c1a10] relative overflow-hidden"
+              >
+                <img
+                  alt="Chinese Elm Bonsai"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  data-alt="Twisted trunk bonsai tree with small green leaves"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2DD5l8sSUAsD8QFAGTTOo7rzjOfZVIoX3_GGKEGmlrlliLm5_1oV1PaXvDPG0OwLJXbYa01Xm9hU1W6x4JxM2JGgvrnpl6UPKPTh7hnGCYkM4eK024DLHE3qUgyccQPiJPcRvVVn0cjco_s_htH6d6KzkMInKm8NHD29Es7r4nxwu9cXYxrPOCnBbe0I81ykb_ok7IxvB4rHuYri-AKGHv0CSkAwMUo4kfIYjnxXRm69HSdLogkeFFG1Gojq-CWdRpg4-8l54V8Y"
+                />
+                <span
+                  class="absolute top-4 left-4 bg-white/90 dark:bg-[#102215]/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#111813] dark:text-white"
+                  >Beginner</span
+                >
+              </div>
+              <div class="p-5">
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="text-lg font-bold text-[#111813] dark:text-white">
+                    Chinese Elm
+                  </h3>
+                  <span class="text-primary font-bold">$65.00</span>
+                </div>
+                <p class="text-sm text-[#61896b] dark:text-[#8ba893] mb-4">
+                  Semi-Indoor • 8 Years Old
+                </p>
+                <button
+                  class="w-full py-2.5 rounded-lg border-2 border-[#111813] dark:border-white text-[#111813] dark:text-white font-bold hover:bg-[#111813] hover:text-white dark:hover:bg-white dark:hover:text-[#102215] transition-colors text-sm"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+            <!-- Product 4 -->
+            <div
+              class="min-w-[280px] md:min-w-[320px] snap-center bg-white dark:bg-[#102215] rounded-xl overflow-hidden group border border-[#dbe6de] dark:border-[#1e3a24] hover:shadow-lg transition-all"
+            >
+              <div
+                class="h-[280px] bg-[#f6f8f6] dark:bg-[#0c1a10] relative overflow-hidden"
+              >
+                <img
+                  alt="Large Ficus Bonsai"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  data-alt="Large ficus bonsai with aerial roots"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWcImtrA3ER9n3K0iqoF9zLX1cJBhPgb0nVTetFnHEjxHLQ38R8WoH51NwVhal_yydG5iHzVYRn6g6szL3HThZwTzateXIsq7sDt2ocgGRluM6N0zIPCkJUewBviGXjtqFeTiqQoCq_eRYBJ5tzqfonCe0-FSVgSrraIv-dOFuGbzmQet4Wdy1A3HQ-MyINF0ylTiQED4BZ-9NNC2E0sUYauqbrd0oP8YExR4oePGOQiUofkyX9CYk76y_gqGbKftdm-PvFu-oNw0"
+                />
+                <span
+                  class="absolute top-4 left-4 bg-accent-gold/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#102215]"
+                  >Master</span
+                >
+              </div>
+              <div class="p-5">
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="text-lg font-bold text-[#111813] dark:text-white">
+                    Ficus Microcarpa
+                  </h3>
+                  <span class="text-primary font-bold">$350.00</span>
+                </div>
+                <p class="text-sm text-[#61896b] dark:text-[#8ba893] mb-4">
+                  Indoor Specimen • 25 Years Old
+                </p>
+                <button
+                  class="w-full py-2.5 rounded-lg border-2 border-[#111813] dark:border-white text-[#111813] dark:text-white font-bold hover:bg-[#111813] hover:text-white dark:hover:bg-white dark:hover:text-[#102215] transition-colors text-sm"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Latest from the Blog -->
+        <section class="py-16 md:py-24 px-4 md:px-10">
+          <div class="text-center mb-16">
+            <span
+              class="text-primary font-bold uppercase tracking-widest text-sm mb-2 block"
+              >The Knowledge Base</span
+            >
+            <h2
+              class="text-3xl md:text-5xl font-bold text-[#111813] dark:text-white mb-6"
+            >
+              Master the Art of Care
+            </h2>
+            <p
+              class="text-[#4a5f50] dark:text-[#a3b8a9] text-lg max-w-2xl mx-auto"
+            >
+              Bonsai is not just a plant, it is a practice. Learn the essential
+              techniques to help your tree thrive.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Article 1 -->
+            <article class="flex flex-col group cursor-pointer">
+              <div
+                class="aspect-[4/3] rounded-2xl overflow-hidden mb-6 relative"
+              >
+                <div
+                  class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10"
+                ></div>
+                <img
+                  alt="Close up of bonsai pruning scissors cutting a branch"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  data-alt="Hand holding pruning shears cutting a small branch"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe3ElDmGcZLvkN49DbHrY2tb-QhLNnmPnfxUFVEzmJevkgpEf_daH_wc7YXhjS-ATcSIjN1aQORbkyD0SAPQInYl0IT70TVOrnB9E_PE-5w7CC4_T3-E2XSG-k-FN9NrbWeB2zRGcG_BW8__hAWM9l89p6wDz8yFU5hD4XtRq31uL7wlA7Hc_zMP4n0KyvuSEGeaFtA8h5mFnPmn3X4O7FC3MPof7kQmmRF0lzHjNJCg9CXXQVKP00K4XnCIxYnK7gkjoIBVodgc8"
+                />
+                <div
+                  class="absolute bottom-4 left-4 z-20 bg-white/90 dark:bg-[#102215]/90 backdrop-blur px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-[#111813] dark:text-white"
+                >
+                  Technique
+                </div>
+              </div>
+              <h3
+                class="text-xl font-bold text-[#111813] dark:text-white mb-3 group-hover:text-primary transition-colors"
+              >
+                The Art of Pruning: Shaping Your Vision
+              </h3>
+              <p class="text-[#61896b] dark:text-[#8ba893] mb-4 line-clamp-2">
+                Learn the difference between maintenance pruning and structural
+                pruning, and how to use shears effectively without damaging the
+                tree.
+              </p>
+              <a
+                class="inline-flex items-center text-sm font-bold text-[#111813] dark:text-white border-b-2 border-primary/30 hover:border-primary pb-1 w-fit transition-colors"
+                href="#"
+              >
+                Read Article
+                <span class="material-symbols-outlined text-sm ml-1"
+                  >arrow_forward</span
+                >
+              </a>
+            </article>
+            <!-- Article 2 -->
+            <article class="flex flex-col group cursor-pointer">
+              <div
+                class="aspect-[4/3] rounded-2xl overflow-hidden mb-6 relative"
+              >
+                <div
+                  class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10"
+                ></div>
+                <img
+                  alt="Watering can pouring water on bonsai"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  data-alt="Watering can pouring water over soil"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-Tg1bHVmuOviNhavoTdSRdMEAgMiSKl5HqbxqBqTEcm8w7qTL-tX5xImamDmzKm6m9YD2-Oo4nMa33RWlf55olthEnnTxVaaiNwThzhjlwHNwHru_vv4NQr5dDdvSNDRRtbenLGDFe48ApDMweMlGV4QnQrUGwgbyat-fo57i2y_gnEFM4cic5hw5Sdj5DeO8kdjDU5-Kf1OZAWyhR0r3eLBcQ3MZvp0aAAiIHGWbhI9RDrfevnmVUvSVzKOCBLRpJ41YHBi-syU"
+                />
+                <div
+                  class="absolute bottom-4 left-4 z-20 bg-white/90 dark:bg-[#102215]/90 backdrop-blur px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-[#111813] dark:text-white"
+                >
+                  Care Basics
+                </div>
+              </div>
+              <h3
+                class="text-xl font-bold text-[#111813] dark:text-white mb-3 group-hover:text-primary transition-colors"
+              >
+                Watering 101: The Soak Method
+              </h3>
+              <p class="text-[#61896b] dark:text-[#8ba893] mb-4 line-clamp-2">
+                Overwatering is the #1 killer of bonsai. Discover how to check
+                soil moisture and why the 'soak and dry' cycle is critical for
+                root health.
+              </p>
+              <a
+                class="inline-flex items-center text-sm font-bold text-[#111813] dark:text-white border-b-2 border-primary/30 hover:border-primary pb-1 w-fit transition-colors"
+                href="#"
+              >
+                Read Article
+                <span class="material-symbols-outlined text-sm ml-1"
+                  >arrow_forward</span
+                >
+              </a>
+            </article>
+            <!-- Article 3 -->
+            <article class="flex flex-col group cursor-pointer">
+              <div
+                class="aspect-[4/3] rounded-2xl overflow-hidden mb-6 relative"
+              >
+                <div
+                  class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10"
+                ></div>
+                <img
+                  alt="Bonsai tools arranged on table"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  data-alt="Collection of bonsai tools on a wooden table"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqOxQNi7E5yynRV48iyYmUu78FLnRl1Mxs0S0WQg7G8Jm1NizhPbSQK9dltYWZEtd9BgzYJroeXacWV9iYjGwjCPtEn9R790kkmjga24O69FZKhyGhSqHLxIWZREDWBgI-jNo0DB5dycAII-L4rVe-guj5JHI1qUPPcyafmuZTuI9lqM5isQAp7ppeuw5ScLmQL-5LEG93rKOQEesUqIQp8wLz3cBFQBTcJ7Qz8W_FzzsHJX4bhGIfzcyldb0IA0eADnl5rKSrwPg"
+                />
+                <div
+                  class="absolute bottom-4 left-4 z-20 bg-white/90 dark:bg-[#102215]/90 backdrop-blur px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-[#111813] dark:text-white"
+                >
+                  Essentials
+                </div>
+              </div>
+              <h3
+                class="text-xl font-bold text-[#111813] dark:text-white mb-3 group-hover:text-primary transition-colors"
+              >
+                The 5 Tools Every Beginner Needs
+              </h3>
+              <p class="text-[#61896b] dark:text-[#8ba893] mb-4 line-clamp-2">
+                You don't need a full arsenal to start. We break down the
+                essential kit: concave cutters, shears, wire, and a chopstick.
+              </p>
+              <a
+                class="inline-flex items-center text-sm font-bold text-[#111813] dark:text-white border-b-2 border-primary/30 hover:border-primary pb-1 w-fit transition-colors"
+                href="#"
+              >
+                Read Article
+                <span class="material-symbols-outlined text-sm ml-1"
+                  >arrow_forward</span
+                >
+              </a>
+            </article>
+          </div>
+        </section>
+        <!-- Newsletter / Footer CTA -->
+        <section class="px-4 md:px-10 pb-10">
+          <div
+            class="bg-[#102215] dark:bg-[#0c1a10] rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 overflow-hidden relative"
+          >
+            <!-- Background Pattern -->
+            <div
+              class="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none"
+              style="
+                background-image: radial-gradient(#11d442 1px, transparent 1px);
+                background-size: 24px 24px;
+              "
+            ></div>
+            <div class="relative z-10 max-w-lg text-center md:text-left">
+              <h2 class="text-3xl font-bold text-white mb-4">
+                Join the Bonsai Community
+              </h2>
+              <p class="text-[#a3b8a9] text-lg mb-0">
+                Get weekly care tips, exclusive access to new specimen drops,
+                and expert advice delivered to your inbox.
+              </p>
+            </div>
+            <div class="relative z-10 w-full max-w-md">
+              <form class="flex flex-col gap-3">
+                <div class="flex flex-col sm:flex-row gap-3">
+                  <input
+                    class="flex-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    placeholder="Enter your email"
+                    type="email"
+                  />
+                  <button
+                    class="px-6 py-3 bg-primary hover:bg-[#0fb337] text-[#102215] font-bold rounded-xl transition-colors"
+                    type="button"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+                <p class="text-xs text-[#a3b8a9] text-center sm:text-left">
+                  We respect your privacy. Unsubscribe at any time.
+                </p>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- Footer -->
+      <footer
+        class="bg-white dark:bg-[#102215] border-t border-[#f0f4f1] dark:border-[#1e3a24] pt-16 pb-8"
+      >
+        <div class="max-w-[1440px] mx-auto px-4 md:px-10">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16"
+          >
+            <!-- Brand -->
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="size-6 text-primary">
+                  <span class="material-symbols-outlined text-2xl">spa</span>
+                </div>
+                <span class="text-[#111813] dark:text-white font-bold text-lg"
+                  >Bonsai Boutique</span
+                >
+              </div>
+              <p
+                class="text-[#61896b] dark:text-[#8ba893] text-sm leading-relaxed"
+              >
+                Dedicated to the art of bonsai. Providing premium trees, tools,
+                and education to enthusiasts worldwide.
+              </p>
+              <div class="flex gap-4 mt-2">
+                <a
+                  class="text-[#111813] dark:text-white hover:text-primary transition-colors"
+                  href="#"
+                  ><span class="material-symbols-outlined">public</span></a
+                >
+                <!-- Representing generic social web -->
+                <a
+                  class="text-[#111813] dark:text-white hover:text-primary transition-colors"
+                  href="#"
+                  ><span class="material-symbols-outlined"
+                    >photo_camera</span
+                  ></a
+                >
+                <a
+                  class="text-[#111813] dark:text-white hover:text-primary transition-colors"
+                  href="#"
+                  ><span class="material-symbols-outlined"
+                    >smart_display</span
+                  ></a
+                >
+              </div>
+            </div>
+            <!-- Shop Links -->
+            <div>
+              <h4 class="text-[#111813] dark:text-white font-bold mb-4">
+                Shop
+              </h4>
+              <ul class="flex flex-col gap-2">
+                <li>
+                  <a
+                    class="text-[#61896b] dark:text-[#8ba893] hover:text-primary text-sm"
+                    href="#"
+                    >All Trees</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-[#61896b] dark:text-[#8ba893] hover:text-primary text-sm"
+                    href="#"
+                    >Beginner Collection</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-[#61896b] dark:text-[#8ba893] hover:text-primary text-sm"
+                    href="#"
+                    >Indoor Bonsai</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-[#61896b] dark:text-[#8ba893] hover:text-primary text-sm"
+                    href="#"
+                    >Tools &amp; Pots</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-[#61896b] dark:text-[#8ba893] hover:text-primary text-sm"
+                    href="#"
+                    >Gift Cards</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!-- Learn Links -->
+            <div>
+              <h4 class="text-[#111813] dark:text-white font-bold mb-4">
+                Learn
+              </h4>
+              <ul class="flex flex-col gap-2">
+                <li>
+                  <a
+                    class="text-[#61896b] dark:text-[#8ba893] hover:text-primary text-sm"
+                    href="#"
+                    >Care Guides</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-[#61896b] dark:text-[#8ba893] hover:text-primary text-sm"
+                    href="#"
+                    >Bonsai 101</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-[#61896b] dark:text-[#8ba893] hover:text-primary text-sm"
+                    href="#"
+                    >Community Forum</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-[#61896b] dark:text-[#8ba893] hover:text-primary text-sm"
+                    href="#"
+                    >Workshops</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!-- Contact -->
+            <div>
+              <h4 class="text-[#111813] dark:text-white font-bold mb-4">
+                Contact
+              </h4>
+              <ul class="flex flex-col gap-3">
+                <li
+                  class="flex items-start gap-2 text-sm text-[#61896b] dark:text-[#8ba893]"
+                >
+                  <span
+                    class="material-symbols-outlined text-base shrink-0 mt-0.5"
+                    >location_on</span
+                  >
+                  123 Green Leaf Ave<br />Portland, OR 97204
+                </li>
+                <li
+                  class="flex items-center gap-2 text-sm text-[#61896b] dark:text-[#8ba893]"
+                >
+                  <span class="material-symbols-outlined text-base shrink-0"
+                    >mail</span
+                  >
+                  hello@bonsaiboutique.com
+                </li>
+                <li
+                  class="flex items-center gap-2 text-sm text-[#61896b] dark:text-[#8ba893]"
+                >
+                  <span class="material-symbols-outlined text-base shrink-0"
+                    >call</span
+                  >
+                  +1 (555) 123-4567
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="border-t border-[#f0f4f1] dark:border-[#1e3a24] pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+          >
+            <p class="text-xs text-[#61896b] dark:text-[#8ba893]">
+              © 2023 Bonsai Boutique. All rights reserved.
+            </p>
+            <div class="flex gap-6">
+              <a
+                class="text-xs text-[#61896b] dark:text-[#8ba893] hover:text-primary"
+                href="#"
+                >Privacy Policy</a
+              >
+              <a
+                class="text-xs text-[#61896b] dark:text-[#8ba893] hover:text-primary"
+                href="#"
+                >Terms of Service</a
+              >
+              <a
+                class="text-xs text-[#61896b] dark:text-[#8ba893] hover:text-primary"
+                href="#"
+                >Shipping &amp; Returns</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
