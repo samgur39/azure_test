@@ -32,10 +32,9 @@ jobs:
           output_location: "."
           skip_app_build: true
           deployment_environment: "production"
-          
-        - name: Deploy to Azure Storage
-          uses: azure/CLI@v1
-          with:
+
+      - name: Deploy to Azure Storage
+        uses: azure/CLI@v1
+        with:
           inlineScript: |
             az storage blob upload-batch -s ./ -d '$web' --account-name kdhdonga --auth-mode key --overwrite true --account-key ${{ secrets.AZURE_STORAGE_KEY }}
-          
